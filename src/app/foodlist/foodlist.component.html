@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Sans Pro">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section>
+        <div class="header">
+          <div class="logo">
+            <img src="/assets/images/logo.png" alt="Cafe Management Logo" width="150px">
+            <h1>Cafe<b>Management</b></h1>
+            <div class="search-bar">
+              <button routerLink="/help" class="help"><b>Help</b></button>
+              <button routerLink="/book-table" class="Book"><b>Book a Table</b></button>
+              <div class="profile-dropdown">
+                <button class="profile-button" (click)="toggleDropdown()" > <b>PROFILE</b>
+                  <span class="arrow"></span>
+                </button>
+                <div class="dropdown-content" [class.visible]="isDropdownOpen" [class.hidden]="!isDropdownOpen">
+                  <p routerLink="/userdetails">Account Details</p>
+                  <button (click)="logout()">LOGOUT</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+<div class="food-list-container">
+
+    <h4><b>PIZZAS</b></h4>
+    <div *ngFor="let foodItem of specialItems" class="food-item">  
+    
+      <div class="food-details">
+        <h3>{{ foodItem.name }}</h3>
+        <p class="price">Price: {{ foodItem.price }}</p>
+      </div>
+      <div class="image">
+        <img src="{{foodItem.image}}" alt="{{foodItem.name}}" class="food-image"> 
+    </div>
+    <div *ngIf="!foodItem.isAddedToCart">
+      <button (click)="showPopupAndAddToCart(foodItem)" class="add-button">Add</button>
+    </div>
+    
+    </div>
+    </div>
+
+
+  <div class="food-list-container">
+    <h4><b>BURGERS</b></h4>
+    <div *ngFor="let foodItem of regularItems" class="food-item">  
+       
+      <div class="food-details">
+        <h3>{{ foodItem.name }}</h3>
+        <p class="price">Price: {{ foodItem.price }}</p>
+      </div>
+      <div class="image">
+        <img src="{{foodItem.image}}" alt="{{foodItem.name}}" class="food-image"> 
+      </div>
+      <div *ngIf="!foodItem.isAddedToCart">
+        <button (click)="showPopupAndAddToCart(foodItem)" class="add-button">Add</button>
+      </div>
+     
+    </div>
+    </div>>
+ 
+
+  <div class="food-list-container">
+    <h4><b>Doughtnuts</b></h4>
+    <div *ngFor="let foodItem of items" class="food-item">  
+    
+      <div class="food-details">
+        <h3>{{ foodItem.name }}</h3>
+        <p class="price">Price: {{ foodItem.price }}</p>
+      </div>
+      <div class="image">
+        <img src="{{foodItem.image}}" alt="{{foodItem.name}}" class="food-image"> 
+      </div>
+      <div *ngIf="!foodItem.isAddedToCart">
+        <button (click)="showPopupAndAddToCart(foodItem)" class="add-button">Add</button>
+      </div>
+     
+    </div>
+    </div>
+
+  <div class="food-list-container">
+    <h4><b>Desserts</b></h4>
+    <div *ngFor="let foodItem of dessertitem" class="food-item">  
+       
+      <div class="food-details">
+        <h3>{{ foodItem.name }}</h3>
+        <p class="price">Price: {{ foodItem.price }}</p>
+      </div>
+      <div class="image">
+        <img src="{{foodItem.image}}" alt="{{foodItem.name}}" class="food-image"> 
+    </div>
+    <div *ngIf="!foodItem.isAddedToCart">
+      <button (click)="showPopupAndAddToCart(foodItem)" class="add-button">Add</button>
+    </div>
+   
+    </div>
+    </div>
+
+  <div class="food-list-container">
+    <h4><b>Ice-Cream</b></h4>
+    <div *ngFor="let foodItem of icecream" class="food-item">  
+      <div class="food-details">
+        <h3>{{ foodItem.name }}</h3>
+        <p class="price">Price: {{ foodItem.price }}</p>
+      </div>
+      <div class="image">
+        <img src="{{foodItem.image}}" alt="{{foodItem.name}}" class="food-image"> 
+    </div>
+    <div *ngIf="!foodItem.isAddedToCart">
+      <button (click)="showPopupAndAddToCart(foodItem)" class="add-button">Add</button>
+    </div>
+   
+    </div>
+    </div>
+
+
+  <div class="food-list-container">
+    <h4><b>Drinks</b></h4>
+    <div *ngFor="let foodItem of coffee" class="food-item">  
+       
+      <div class="food-details">
+        <h3>{{ foodItem.name }}</h3>
+        <p class="price">Price: {{ foodItem.price }}</p>
+      </div>
+      <div class="image">
+        <img src="{{foodItem.image}}" alt="{{foodItem.name}}" class="food-image"> 
+    </div>
+    <div *ngIf="!foodItem.isAddedToCart">
+      <button (click)="showPopupAndAddToCart(foodItem)" class="add-button">Add</button>
+    </div>
+  
+    </div>
+    </div>
+
+    <div class="popup" *ngIf="showPopup">
+      <div class="popup-content">
+        <h2>Select Quantity</h2>
+        <!-- Loop through selected items in the pop-up -->
+        <div *ngFor="let item of cartItemsInPopup">
+          <p>{{ item.name }} - Quantity:
+            <button (click)="decreaseQuantityInPopup(item)">-</button>
+            <span>{{ item.quantity }}</span>
+            <button (click)="increaseQuantityInPopup(item)">+</button>
+            <button (click)="removeItemFromPopup(item)">Remove</button>
+           
+
+          </p>
+    
+        </div>
+        <p>Total: {{ calculateTotalInPopup() }}</p>
+        <button (click)="closePopup()">Cancel</button>
+        
+        <!-- Call the navigateToCheckoutPage method passing the total amount -->
+        <button (click)="navigateToCheckoutPage(calculateTotalInPopup())">Go to Checkout</button>
+
+        <div class="close-btn" (click)="closePopup()"></div>
+      
+
+      </div>
+    </div>
+
+    
+    
+   
+
+
+
+
+<section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <h4><b>Company</b></h4>
+                    <ul>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/about">Team</a></li>
+                       
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4><b>GetHelp</b></h4>
+                    <ul>
+                        <li><a href="/help">FAQ</a></li>
+                        <li><a href="/help">Help & Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4><b>Legal</b></h4>
+                    <ul>
+                        <li><a href="/terms">Terms & Conditions</a></li>
+                        <li><a href="/franchise">Franchise</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4><b>Follow Us</b></h4>
+                    <div class="social-links">
+                       
+                        <a href="https://twitter.com/Yogananda222" class="fa fa-twitter"></a>
+                        <a href="https://www.instagram.com/mr.nanda_01" class="fa fa-instagram"></a>
+                        <a href="https://www.linkedin.com/in/puchakayala-yogananda-naidu-8a8991216" class="fa fa-linkedin"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+  </section>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+

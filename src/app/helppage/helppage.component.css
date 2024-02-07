@@ -1,0 +1,159 @@
+/* helppage.component.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+}
+.container{
+  max-width: 1200vw;
+  margin: 0 auto;
+  
+}
+* {
+  box-sizing: border-box;
+}
+
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-left: -20px;
+}
+
+.logo img {
+  max-width: 120px; /* Set your desired max-width for the image */
+  margin-right: 10px; /* Adjust as needed */
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 1.6em; 
+  content: Managemt ;
+  color: #000;
+}
+
+.logo h1 b{
+  color: #ff511c;
+}
+
+.nav p {
+  margin: 0 20px;
+  font-weight: bold;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav li {
+ 
+  margin-left: 25px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #0a0909
+  ; /* Set your desired text color */
+  font-weight: bold;
+}
+
+.button-container {
+  display: flex;
+}
+
+.login-button{
+  margin-left: 250px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #0e0d0d; /* Set your desired text color */
+  background-color: #F2D2BD ; /* Set your desired background color */
+  border-radius: 5px;
+  font-size: 20px;
+  
+  
+  
+}
+.signup-button, .adminlogin-button{
+  margin-left: 100px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #020202; /* Set your desired text color */
+  background-color: #F2D2BD ; /* Set your desired background color */
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+ 
+}
+.container-row{
+  height: 300%;
+  width: 300%;
+}
+h2 {
+  text-align: left;
+  
+  
+}
+
+
+.faq-item {
+  margin-bottom: 20px;
+}
+
+.question {
+  margin-top: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #0d0d0d;
+  padding: 10px;
+  border-radius: 5px;
+  width: 50%;
+  margin-left: 300px;
+ 
+}
+
+.answer {
+  border: 1px ;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+  width: 50%;
+  margin-left: 300px;
+ 
+  
+}
+
+.answer p {
+  margin: 0;
+}
+
+.fa {
+  font-size: 18px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.fa-chevron-down {
+  transform: rotate(180deg);
+}

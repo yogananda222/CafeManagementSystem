@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Sans Pro">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <section>
+    <div class="header">
+      <div class="logo">
+        <img src="/assets/images/logo.png" alt="Cafe Management Logo" width="150px">
+        <h1>Cafe<b>Management</b></h1>
+        <div class="search-bar">
+          <button routerLink="/help" class="help"><b>Help</b></button>
+          <button routerLink="/book-table" class="Book"><b>Book a Table</b></button>
+        </div>
+          <div class="profile-dropdown">
+            <button class="profile-button" (click)="toggleDropdown()" > <b>PROFILE</b>
+            </button>
+            <div class="dropdown-content" [class.visible]="isDropdownOpen" [class.hidden]="!isDropdownOpen">
+              <p routerLink="/userdetails">Account Details</p>
+              <button (click)="logout()">LOGOUT</button>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+  </section>
+  
+  <section class="body-content">
+    <div class="user-input">
+      <h1 style="font-size: 50px;">{{username}}, What's in your mind?</h1>
+    </div>
+    <div class="image-slider">
+      <img *ngFor="let image of images" [src]="image" alt="Slide Image" (click)="navigateToOtherPage()">
+    </div>
+  <!--  <div class="nav-arrows">
+      <span class="arrow left" (click)="prevImage()">&#9665;</span>
+      <span class="arrow right" (click)="nextImage()">&#9655;</span>
+    </div> -->
+  </section>
+  <section>
+    <h3><b>OUR CAFE SPECIALS </b></h3>
+    <div class="container">
+      <div class="card1">
+          <img src="/assets/images/Round Image-1.png" alt="Ice cream Image" class="image" width="20px">
+          <div class="data">
+              <h1 class="title"><b>Ice Cream</b></h1>
+             
+              <p class="description">
+                  Ice cream with rich flavors and high-quality ingredients
+              </p>
+              <span class="fa fa-star checked" style="color: goldenrod;"></span>
+              <span class="fa fa-star checked" style="color: goldenrod;"></span>
+              <span class="fa fa-star checked" style="color: goldenrod;"></span>
+              <span class="fa fa-star checked" style="color: goldenrod;"></span>
+              <span class="fa fa-star" style="color: goldenrod;"></span>
+              <a  class="review" target="_blank"><small></small></a>
+              <a (click)="navigateToItemsPage()" class="button" target="_blank">Order Now</a>
+          </div>
+      </div>
+      <div class="card2">
+      <img src="/assets/images/c1.png" alt="Ice cream Image" class="image2" width="40px">
+      <div class="data2">
+          <h1 class="title2"><b>Cappuccino</b></h1>
+         
+          <p class="description2">
+            An espresso-based coffee drink that is traditionally prepared with steamed milk.
+          </p>
+          <span class="fa fa-star checked" style="color: goldenrod;"></span>
+              <span class="fa fa-star checked" style="color: goldenrod;"></span>
+              <span class="fa fa-star checked" style="color: goldenrod;"></span>
+              <span class="fa fa-star checked" style="color: goldenrod;"></span>
+              <span class="fa fa-star" style="color: goldenrod;"></span>
+          <a  class="review" target="_blank"><small></small></a>
+          <a (click)="navigateToItemsPage()" class="button" target="_blank">Order Now</a>
+          </div>
+      </div>
+      <div class="card3">
+        <img src="/assets/images/SpecialRolls.png" alt="Ice cream Image" class="image3" width="40px" >
+        <div class="data3">
+            <h1 class="title3"><b>Rolls</b></h1>
+           
+            <p class="description3">
+              Special  Rolls with 2 variety of Veg and Non-veg.
+            </p>
+            <span class="fa fa-star checked" style="color: goldenrod;"></span>
+              <span class="fa fa-star checked" style="color: goldenrod;"></span>
+              <span class="fa fa-star checked" style="color: goldenrod;"></span>
+              <span class="fa fa-star checked" style="color: goldenrod;"></span>
+              <span class="fa fa-star" style="color: goldenrod;"></span>
+            <a  class="review" target="_blank"><small></small></a>
+            <a (click)="navigateToItemsPage()" class="button" target="_blank">Order Now</a>
+            </div>
+        </div>
+        <div class="card4">
+          <img src="/assets/images/DoughnutsMain.png" alt="Ice cream Image" class="image4" width="40px">
+          <div class="data4">
+              <h1 class="title4"><b>Doughnut</b></h1>
+             
+              <p class="description4">
+                A Doughnut with strawberry falvour tastes yummy.
+              </p>
+              <span class="fa fa-star checked" style="color: goldenrod;"></span>
+              <span class="fa fa-star checked" style="color: goldenrod;"></span>
+              <span class="fa fa-star checked" style="color: goldenrod;"></span>
+              <span class="fa fa-star checked" style="color: goldenrod;"></span>
+              <span class="fa fa-star" style="color: goldenrod;"></span>
+              <a  class="review" target="_blank"><small></small></a>
+              <a (click)="navigateToItemsPage()" class="button" target="_blank">Order Now</a>
+              </div>
+          </div>
+    </div>
+  </section>
+
+</body>
+
+<section>
+  <footer class="footer">
+      <div class="container">
+          <div class="footer-row">
+              <div class="footer-col">
+                  <h4><b>Company</b></h4>
+                  <ul>
+                      <li><a href="/about">About</a></li>
+                      <li><a href="/about">Team</a></li>
+                     
+                  </ul>
+              </div>
+              <div class="footer-col">
+                  <h4><b>GetHelp</b></h4>
+                  <ul>
+                      <li><a href="/help">FAQ</a></li>
+                      <li><a href="/help">Help & Support</a></li>
+                  </ul>
+              </div>
+              <div class="footer-col">
+                  <h4><b>Legal</b></h4>
+                  <ul>
+                      <li><a href="/terms">Terms & Conditions</a></li>
+                      <li><a href="/franchise">Franchise</a></li>
+                  </ul>
+              </div>
+              <div class="footer-col">
+                  <h4><b>Follow Us</b></h4>
+                  <div class="social-links">
+                     
+                      <a href="https://twitter.com/Yogananda222" class="fa fa-twitter"></a>
+                      <a href="https://www.instagram.com/mr.nanda_01" class="fa fa-instagram"></a>
+                      <a href="https://www.linkedin.com/in/puchakayala-yogananda-naidu-8a8991216" class="fa fa-linkedin"></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+</section>
+
+
+</html>
+

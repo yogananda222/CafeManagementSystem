@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Sans Pro">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+  <section>
+    <div class="title">
+      <div class="logo">
+        <img src="/assets/images/logo.png" alt="Cafe Management Logo" width="150px">
+        <h1>Cafe<b>Management</b></h1>
+        <div class="button-container">
+          
+          <a routerLink="/signup" class="signup-button"><b>SignUp</b></a>
+         <!-- <a routerLink="/adminlogin" class="adminlogin-button"><b>Admin</b></a>-->
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+  <section>
+    <div class="box-form">
+      <div class="left">
+          <div class="overlay">
+              <h1><b>Craving Something..?</b></h1>
+              <p>Satisfy you hunger with our delightful offerings!!</p>
+          </div>
+      </div>
+      <div class="right">
+        <form #spForm="ngForm" (ngSubmit)="loginuser()" class="login-form"  >
+        <h5>Sign In</h5>
+        <div class="inputs">
+          <input type="text"class="form-control"id="username"name="username"[(ngModel)]="user.username" placeholder="Enter User Name" required minlength="4"  />
+          <div class="error-message" *ngIf="spForm.controls['username'].invalid && (spForm.controls['username'].dirty || spForm.controls['username'].touched)"> 
+            <div *ngIf="spForm.controls['username']?.errors?.['minlength']"> Usernaem must contain atleast 4 characters.</div>
+        </div>
+        <input type="password"  class="form-control"  id="password"  name="password"  [(ngModel)]="user.userpassword" placeholder="Enter password" required minlength="6" />
+        <div class="error-message" *ngIf="spForm.controls['password'].invalid && (spForm.controls['password'].dirty || spForm.controls['password'].touched)">
+          <div *ngIf="spForm.controls['password']?.errors?.['required']">Password is required.</div>
+          <div *ngIf="spForm.controls['password']?.errors?.['minlength']"> Password should be minimum 6 characters. </div>
+        </div>
+        </div>
+        <button type="submit" (click)="loginuser()"> <b>Login</b></button>
+        <p>Don't have an account? <a (click)="Onsingup()">Sign Up</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+      
+    
+    
+  
+
+
+
+      
+
+
+
+

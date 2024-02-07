@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Sans Pro">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <section>
+    <div class="header">
+      <div class="logo">
+        <img src="/assets/images/logo.png" alt="Cafe Management Logo" width="150px">
+        <h1>Cafe<b>Management</b></h1>
+        <div class="search-bar">
+          <button routerLink="/help" class="help"><b>Help</b></button>
+          <button routerLink="/book-table" class="Book"><b>Book a Table</b></button>
+          <div class="profile-dropdown">
+            <button class="profile-button" (click)="toggleDropdown()" > <b>PROFILE</b>
+              <span class="arrow"></span>
+            </button>
+            <div class="dropdown-content" [class.visible]="isDropdownOpen" [class.hidden]="!isDropdownOpen">
+              <p routerLink="/userdetails">Account Details</p>
+              <button (click)="logout()">LOGOUT</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="content">
+    <div class="Delivery">
+      <h2>Delivery Address:</h2>
+      <p>Please enter your address</p>
+      <div class="form">   
+        <label class="field">
+          <span class="field__label" for="firstname">First name</span>
+          <input class="field__input" type="text" id="firstname"  />
+        </label>
+        <label class="field">
+          <span class="field__label" for="lastname">Last name</span>
+          <input class="field__input" type="text" id="lastname"  />
+        </label>
+        <label class="field">
+          <span class="field__label" for="address">Address</span>
+          <input class="field__input" type="text" id="address"  />
+        </label>
+        <label class="field">
+          <span class="field__label" for="country">City</span>
+          <select class="field__input" id="country" required>
+            <option value=""></option>
+            <option value="unitedstates">Anantapur</option>
+            <option value="unitedstates">Vijayawada</option>
+            <option value="unitedstates">Bengaluru</option>
+            <option value="unitedstates">Nellore</option>
+          </select>
+        </label>
+        <label class="field">
+          <span class="field__label" for="zipcode">Zip code</span>
+          <input class="field__input" type="text" id="zipcode"  />
+        </label>
+      </div>
+    </div>
+  </section>
+  <section class="payment">
+    <div class="Order-summary card">
+      <h2>Order Summary</h2>
+      <p>Price: {{totalAmount}}</p>
+    </div>
+    <div class="form">
+      <h2>Payment</h2>
+      <label class="field">
+        <span class="field__label">Card Number</span>
+        <input class="field__input" type="text" placeholder="Enter card number">
+      </label>
+      <label class="field">
+        <span class="field__label">Name on the Card</span>
+        <input class="field__input" type="text" placeholder="Enter name">
+      </label>
+      <label class="field">
+        <span class="field__label">CVV</span>
+        <input class="field__input" type="text" placeholder="CVV">
+      </label>
+    </div>
+    <button class="button button--full" (click)="proceed()">Proceed</button>
+  </section>
+</body>
+
+
+<section>
+  <footer class="footer">
+      <div class="container">
+          <div class="footer-row">
+              <div class="footer-col">
+                  <h4><b>Company</b></h4>
+                  <ul>
+                      <li><a href="/about">About</a></li>
+                      <li><a href="/about">Team</a></li>
+                     
+                  </ul>
+              </div>
+              <div class="footer-col">
+                  <h4><b>GetHelp</b></h4>
+                  <ul>
+                      <li><a href="/help">FAQ</a></li>
+                      <li><a href="/help">Help & Support</a></li>
+                  </ul>
+              </div>
+              <div class="footer-col">
+                  <h4><b>Legal</b></h4>
+                  <ul>
+                      <li><a href="/terms">Terms & Conditions</a></li>
+                      <li><a href="/franchise">Franchise</a></li>
+                  </ul>
+              </div>
+              <div class="footer-col">
+                  <h4><b>Follow Us</b></h4>
+                  <div class="social-links">
+                     
+                      <a href="https://twitter.com/Yogananda222" class="fa fa-twitter"></a>
+                      <a href="https://www.instagram.com/mr.nanda_01" class="fa fa-instagram"></a>
+                      <a href="https://www.linkedin.com/in/puchakayala-yogananda-naidu-8a8991216" class="fa fa-linkedin"></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+</section>
+      
+        
+
+
+
+
+</html>

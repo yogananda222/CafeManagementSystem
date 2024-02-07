@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f1f1f1; /* Adding a background color for better visualization */
+  }
+  
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Making the section take the full height of the viewport */
+  }
+  
+  .payments {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .payments h2 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .payments input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .payments button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .payments button:hover {
+    background-color: #45a049;
+  }
+  
+  .payments button:last-child {
+    margin-top: 0;
+    background-color: #f44336; /* Changing the color for cancel button */
+  }
+  
+  .payments button:last-child:hover {
+    background-color: #d32f2f;
+  }
+  

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Sans Pro">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+      <section class="menu">
+        <div class="nav">
+            <div class="logo">
+                <img src="/assets/images/logo.png" alt="Cafe Management Logo">
+                <h1>Cafe<b>Management</b></h1>
+            </div>
+            
+
+<div class="button-container">
+<a routerLink="/log-in" class="login-button"><b>SignIn</b></a>
+<a routerLink="/signup" class="signup-button"><b>SignUp</b></a>
+
+</div>
+
+        </div>
+    </section>
+      <section>
+        <div class="container">
+          <div class="container-row">
+            <h2><b>Help & Support </b></h2>
+            <p>Let's take a step ahead and help you better.</p>
+          </div>
+         
+          <div *ngFor="let item of faq; let i = index" class="faq-item">
+            <div class="question" (click)="toggleAnswer(i)">
+              <span>{{ item.question }}</span>
+              <i class="fa" [ngClass]="{'fa-chevron-down': item.showAnswer, 'fa-chevron-right': !item.showAnswer}"></i>
+            </div>
+            <div class="answer" *ngIf="item.showAnswer">
+              <p>{{ item.answer }}</p>
+            </div>
+          </div>
+        </div>
+        
+      </section>
+    </body>
+  
+  

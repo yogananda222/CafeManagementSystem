@@ -1,0 +1,251 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+  }
+  .container{
+    max-width: 1200vw;
+    margin: 0 auto;
+    
+  }
+  * {
+    box-sizing: border-box;
+  }
+  
+  
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 10px 20px;
+  }
+  
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Adjust as needed */
+  }
+  
+  .logo img {
+    max-width: 120px; /* Set your desired max-width for the image */
+    margin-right: 10px; /* Adjust as needed */
+  }
+  
+  .logo h1 {
+    margin: 0;
+    font-size: 1.6em; 
+    content: Managemt ;
+    color: #000;
+  }
+  
+  .logo h1 b{
+    color: #ff511c;
+  }
+
+  .nav p {
+    margin: 0 20px;
+    font-weight: bold;
+  }
+  
+  .nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .nav li {
+   
+    margin-left: 25px;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: #0a0909
+    ; /* Set your desired text color */
+    font-weight: bold;
+  }
+  
+  .button-container {
+    display: flex;
+  }
+  
+  .header1{
+    margin-left: 250px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #0e0d0d; /* Set your desired text color */
+    background-color: #F2D2BD ; /* Set your desired background color */
+    border-radius: 5px;
+    font-size: 20px;
+    
+    
+    
+  }
+  .header2, .header3{
+    margin-left: 100px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #020202; /* Set your desired text color */
+    background-color: #F2D2BD ; /* Set your desired background color */
+    border-radius: 5px;
+    font-size: 20px;
+  }
+
+  .image {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text {
+    max-width: 60%; /* Adjust as needed */
+    margin-left:20px;
+    font-size: 35px;
+    color: #2c0d04;
+}
+
+.video-container {
+    max-width: 50%; /* Adjust as needed */
+
+}
+
+video {
+    width: 30%;
+    height: 20%;
+    margin-right: 80px;
+    margin-top: 30px;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  .column {
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16x;
+    padding: 0 8px;
+    margin-top: 20px;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+  }
+  .container {
+    padding: 0 16px;
+  }
+
+  .row h2{
+    margin-top: 30px;
+    color: #ff511c;
+  }
+  
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .title {
+    color: grey;
+  }
+  
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .button:hover {
+    background-color: #555;
+  }
+  
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  h2{
+    text-align: center;
+    color: #ff511c;
+  }
+  
+  .row1 {
+    display: flex;
+  }
+  
+  /* Create three equal columns that sits next to each other */
+  .column2 {
+    flex: 33.33%;
+    padding: 5px;
+    width: 10px;
+    
+  }
+  .footer {
+    background-color: #f0c2b4;
+    width: 100%;
+    height: 120%;
+  }
+
+  .container h4{
+    text-align: center;
+    font-size: 30px;
+  }
+  .social-links a {
+    color: #090909;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 40px;
+    transition: all 0.5s ease;
+  }
+  
+  .footer-col .social-links a:hover {
+    color: #151515;
+    background-color: #FFF;
+    text-align: center;
+  }
+  
+  @media(max-width: 768px){
+    .footer-col{
+      width: 1200vw;
+      margin-bottom: 30px;
+    }
+  }
+  
+  @media(max-width: 574px){
+    .footer-col{
+      width: 1200vw;
+    }
+  }
+  
+  
+
+  
